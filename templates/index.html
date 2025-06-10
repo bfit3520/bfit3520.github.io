@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>보건실 현황</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .status-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .status-box h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #004080;
+    }
+
+    .status {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: green;
+    }
+
+    .status.off {
+      color: red;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #004080;
+      color: white;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #0066cc;
+    }
+
+    #toggle-btn {
+      display: none; /* 처음에는 안 보이게 */
+    }
+  </style>
+</head>
+<body>
+  <div class="status-box">
+    <h1>보건실 현황</h1>
+    <div class="status" id="teacher-status">
+      {{status}}
+    </div>
+    
+    <form action = "/submit" method="POST">
+      상태 변경 패스워드: <input type = "text" name = "p">
+      <input type = "submit" value = "확인">
+    </form>
+      
+  </div>
+
+  <!-- <script>
+    // 관리자 비밀번호 (간단한 예: 실제 서비스에서는 절대 이렇게 저장 X)
+    const ADMIN_PASSWORD = "1234";
+
+    function adminLogin() {
+      const password = prompt("관리자 비밀번호를 입력하세요:");
+      if (password === ADMIN_PASSWORD) {
+        alert("관리자 모드로 전환되었습니다.");
+        document.getElementById("toggle-btn").style.display = "inline-block";
+      } else {
+        alert("비밀번호가 틀렸습니다.");
+      }
+    }
+
+    function toggleStatus() {
+      const statusDiv = document.getElementById("teacher-status");
+
+      if (statusDiv.classList.contains("off")) {
+        statusDiv.classList.remove("off");
+        statusDiv.textContent = "선생님이 계십니다";
+      } else {
+        statusDiv.classList.add("off");
+        statusDiv.textContent = "선생님이 자리에 안 계십니다";
+      }
+    }
+  </script> -->
+</body>
+</html>
