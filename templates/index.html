@@ -63,12 +63,16 @@
 <body>
   <div class="status-box">
     <h1>보건실 현황</h1>
-    <div class="status" id="teacher-status">
-      {{status}}
-    </div>
-    
+    if( {{status == "선생님께서 계십니다." ){
+      <div class="status" id="teacher-status">
+        {{status}}
+      </div>
+    }else{
+    <div class="status" style = "color: red;" id="teacher-status">
+        {{status}}
+      </div>
     <form action = "/submit" method="POST">
-      상태 변경 패스워드: <input type = "text" name = "p">
+      상태 변경 패스워드: <input type = "password" name = "p">
       <input type = "submit" value = "확인">
     </form>
       
