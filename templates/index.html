@@ -36,6 +36,13 @@
       color: green;
     }
 
+    .statusTwo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: green;
+    }
+
     .status.off {
       color: red;
     }
@@ -68,7 +75,7 @@
         {{status}}
       </div>
     }else{
-    <div class="status" style = "color: red;" id="teacher-status">
+    <div class="statusTwo" id="teacher-status">
         {{status}}
       </div>
     <form action = "/submit" method="POST">
