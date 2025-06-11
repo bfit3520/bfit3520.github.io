@@ -40,7 +40,7 @@
       font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 20px;
-      color: green;
+      color: red;
     }
 
     .status.off {
@@ -70,15 +70,15 @@
 <body>
   <div class="status-box">
     <h1>보건실 현황</h1>
-    if( {{status}} == "선생님께서 계십니다." ){
+    {% if status == "선생님께서 계십니다." %}
       <div class="status" id="teacher-status">
         {{status}}
       </div>
-    }else{
-    <div class="statusTwo" id="teacher-status">
+    {% else %}
+      <div class="statusTwo" id="teacher-status">
         {{status}}
       </div>
-    }
+    {% endif %}
     <form action = "/submit" method="POST">
       상태 변경 패스워드: <input type = "password" name = "p">
       <input type = "submit" value = "확인">
