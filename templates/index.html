@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>보건실 현황</title>
   <style>
     body {
@@ -65,6 +66,27 @@
     #toggle-btn {
       display: none; /* 처음에는 안 보이게 */
     }
+
+  @media (max-width: 600px) {
+    .status-box {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .status-box h1 {
+      font-size: 1.5rem;
+    }
+  
+    .status, .statusTwo {
+      font-size: 1.2rem;
+    }
+  
+    button, input[type="submit"], input[type="password"] {
+      font-size: 1rem;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
   </style>
 </head>
 <body>
